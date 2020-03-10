@@ -9,7 +9,7 @@ class Autor(models.Model):
         return self.nombre
 
 
-class libros(models.Model):
+class Libros(models.Model):
     title = models.CharField('Titulo',blank=False, max_length=150)
     resumen = models.TextField('Resumen', blank=True)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
