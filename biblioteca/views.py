@@ -3,8 +3,10 @@ from django.shortcuts import render
 from django.views.generic import (
     TemplateView,
     ListView,
+    CreateView,
 )
 from .models import Autor, Libros
+
 class ListaAutores(ListView):
     template_name = 'biblioteca/lista-autores.html'
     model = Autor
@@ -26,3 +28,9 @@ class ListaLibrosAutores(ListView):
         #devulevo el resultado
         return lista
 
+class AddAutor(CreateView):
+    """ Vista para registrar un nuevo autor  """
+    template_name = "biblioteca/add-autor.html"
+    model = Autor
+    fields = ['nombre','nacionalidad']
+    success_url = '/'

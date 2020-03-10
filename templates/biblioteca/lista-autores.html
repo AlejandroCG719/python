@@ -18,7 +18,7 @@
                         <td>{{ a.id }}</td>
                         <td>{{ a.nombre }}</td>
                         <td>{{ a.nacionalidad }}</td>
-                        <td><a href="{% url 'biblioteca_app:lista-libros' a. %}">Ver Libros </a></td>
+                        <td><a href="{% url 'biblioteca_app:lista-libros' a.id %}">Ver Libros </a></td>
                     </tr>
                 {% endfor %}
             </tbody>
